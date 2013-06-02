@@ -1,0 +1,28 @@
+{
+  "name": "mysqlite.js",
+  "version": "0.0.1",
+  "description": "sqlite server talking mysql protocol",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sidorares/mysqlite.js.git"
+  },
+  "keywords": [
+    "mysql",
+    "sqlite",
+    "sql",
+    "server",
+    "bridge",
+    "proxy"
+  ],
+  "author": "Andrey Sidorov <sidorares@yandex.ru>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "node-sqlite-purejs": "0.0.2",
+    "mysql2": "~0.8.11"
+  }
+}
