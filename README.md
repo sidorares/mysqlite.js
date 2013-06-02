@@ -1,7 +1,7 @@
 mysqlite.js
 ===========
 
-sqlite db server talking mysql protocol, all native js
+sqlite db server talking mysql protocol, all native js. Uses (mysql2)[https://github.com/sidorares/node-mysql2] for mysql server-side protocol and (emscripten-compiled sqlite)[https://github.com/kripken/sql.js] as client to sqlite db.
 
 ## Installation
 
