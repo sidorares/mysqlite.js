@@ -5,11 +5,11 @@ sqlite db server talking mysql protocol, all native js. Uses [mysql2](https://gi
 
 ## Installation
 
-    npm install mysqlite.js
+    npm install -g mysqlite.js
 
 ## Usage
 
-    node proxy.js mysql-listen-port path-to-sqlite-db
+    mysqlite mysql-listen-port path-to-sqlite-db
 
 ## Example
 
