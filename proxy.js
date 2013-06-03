@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var mysql = require('mysql2');
 var sqlite = require('node-sqlite-purejs');
 
