@@ -1,6 +1,6 @@
 {
   "name": "mysqlite.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "sqlite server talking mysql protocol",
   "main": "index.js",
   "scripts": {
@@ -18,11 +18,14 @@
     "bridge",
     "proxy"
   ],
+  "bin": {
+    "mysqlite": "./proxy.js"
+  },
   "author": "Andrey Sidorov <sidorares@yandex.ru>",
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
     "node-sqlite-purejs": "0.0.2",
-    "mysql2": "~0.8.11"
+    "mysql2": "~0.8.12"
   }
 }
