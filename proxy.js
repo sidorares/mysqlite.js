@@ -58,7 +58,7 @@ server.on('connection', function(conn) {
       db.exec(sql, function(err, result) {
         if (err) {
           console.log(err);
-          return conn.writeError({ code: 1, message: 'test'});
+          return conn.writeError({ code: 1064, message: err});
         }
         respondWith(conn, result);
      });
