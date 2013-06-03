@@ -22,6 +22,21 @@ function  columnsFor(row) {
   return res;
 }
 
+var fixtures = require('./mysql_std.json');
+function respondWith(conn, result) {
+        if (result.length === 0)
+          return conn.writeEof();
+        conn.writeColumns(columnsFor(result[0]));
+        result.forEach(function(row) {
+          var arrayRow = [];
+          for(var name in row) {
+            arrayRow.push(row[name]);
+          }
+          conn.writeTextRow(arrayRow);
+        });
+        conn.writeEof();
+}
+
 var id = 0;
 var server = mysql.createServer();
 server.on('connection', function(conn) {
@@ -36,32 +51,17 @@ server.on('connection', function(conn) {
     });
     conn.on('query', function(sql) {
       console.log(sql);
-      if (sql == 'SELECT @@global.max_allowed_packet') {
-        row = { '@@global.max_allowed_packet': '20971520' };
-        conn.writeColumns(columnsFor(row));
-        conn.writeTextRow(['20971520']);
-        return conn.writeEof();
-      }
-      if (sql == 'SHOW VARIABLES') {
-        return conn.writeEof();
+      var staticResult = fixtures[sql.toLowerCase()];
+      if (staticResult) {
+        return respondWith(conn, staticResult);
       }
       db.exec(sql, function(err, result) {
         if (err) {
           console.log(err);
           return conn.writeError({ code: 1, message: 'test'});
         }
-        if (result.length === 0)
-          return conn.writeEof();
-        conn.writeColumns(columnsFor(result[0]));
-        result.forEach(function(row) {
-          var arrayRow = [];
-          for(var name in row) {
-            arrayRow.push(row[name]);
-          }
-          conn.writeTextRow(arrayRow);
-        });
-        conn.writeEof();
-      });
+        respondWith(conn, result);
+     });
     });
   });
 });
