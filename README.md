@@ -40,3 +40,7 @@ mysql> SELECT * FROM employees where designation="TECH";
 
 mysql>
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sidorares/mysqlite.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
