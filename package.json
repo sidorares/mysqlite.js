@@ -26,6 +26,6 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "node-sqlite-purejs": "0.0.2",
-    "mysql2": "~0.8.12"
+    "mysql2": "~1.2.0"
   }
 }
