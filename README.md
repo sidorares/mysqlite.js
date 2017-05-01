@@ -1,6 +1,8 @@
 mysqlite.js
 ===========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sidorares/mysqlite.js.svg)](https://greenkeeper.io/)
+
 sqlite db server talking mysql protocol, all native js. Uses [mysql2](https://github.com/sidorares/node-mysql2) as mysql wire protocol server and [emscripten-compiled sqlite](https://github.com/kripken/sql.js) as client to sqlite db.
 
 ## Installation
